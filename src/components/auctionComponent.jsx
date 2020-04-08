@@ -10,6 +10,7 @@ import blackbg from "/mnt/B48E87058E86BF7C/ACM_HACKATHON2020/vintagecars/src/com
 import Button from "react-bootstrap/Button";
 import AucCarModelComponent from "./AucCarModelComponenet";
 import FlipClockM from "./flipTimmer";
+import HeadShake from 'react-reveal/HeadShake';
 export default class AuctionComponent extends React.Component{
 
   constructor(){
@@ -101,12 +102,14 @@ export default class AuctionComponent extends React.Component{
       partialVisibilityGutter: 30
     }
   }}
-  showDots={false}
+  showDots={true}
   slidesToSlide={1}
   swipeable
+  keyBoardControl={false}
 >
         {this.state.cars.map(({id,car}) => (
           <div key={id}>
+            <HeadShake>
             <Card
               text="white"
               style={{
@@ -151,7 +154,7 @@ export default class AuctionComponent extends React.Component{
             <Card.Text class="h4">current Owner:{car.owner}</Card.Text>
               </Card.Body>
             </Card>
-            
+            </HeadShake>
           </div>
         ))}
         
@@ -159,7 +162,7 @@ export default class AuctionComponent extends React.Component{
       <div style={{width:100}}>
       <AucCarModelComponent
               show={this.state.show}
-              onHide={() => this.setState({show:false })}
+              onHide={() => this.setState({show:false,error:false })}
               car={this.state.selectedCar}
               onBid={this.onBid.bind(this)}
               error={this.state.error}

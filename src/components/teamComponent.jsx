@@ -2,11 +2,7 @@ import React from "react";
 import { Team } from "./team";
 import blackbg from "/mnt/B48E87058E86BF7C/ACM_HACKATHON2020/vintagecars/src/components/blackbg1.jpg";
 import {
-  Card,
-  Button,
   CardTitle,
-  Row,
-  Col,
   CardSubtitle,
   CardText,
   CardLink,
@@ -18,7 +14,7 @@ import {
   FlippingCardBack,
   FlippingCardFront,
 } from "react-ui-cards";
-import Center from "react-center";
+import Fade from 'react-reveal/Fade';
 export default function TeamComponent() {
   return (
       <div style={{backgroundColor:'black'}}>
@@ -26,6 +22,7 @@ export default function TeamComponent() {
     <CardGroup>
         {
             Team.map(tm => (
+              <Fade right>
                 <FlippingCard  >
                 <FlippingCardBack className="text-white"  top width="100%">
                   <CardTitle className="h1 text-white"  >{tm.Name}</CardTitle>
@@ -50,6 +47,7 @@ export default function TeamComponent() {
                   />
                 </FlippingCardFront>
                 </FlippingCard>
+                </Fade>
             ))
         }
     </CardGroup>

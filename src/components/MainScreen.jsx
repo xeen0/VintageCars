@@ -1,6 +1,7 @@
 import React from "react";
 import Fullpage, {
   FullPageSections,
+  FullpageNavigation,
   FullpageSection,
 } from "@ap.cx/react-fullpage";
 import Slideshow from "./intro";
@@ -9,52 +10,58 @@ import SoldComponent from "./soldcarsComponent";
 import AuctionComponent from "./auctionComponent";
 import ContactComponent from "./contactComponent";
 import TeamComponent from "./teamComponent";
+import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
 
 export default function MainScreen() {
   return (
-   
     <React.Fragment>
       <Fullpage>
+        <FullpageNavigation />
         <FullPageSections>
-          <div id="home" style={{ padding: "0em" }}>
-            <FullpageSection
-              style={{
-                height: "105vh",
-              }}
-            >
-              <Slideshow />
-            </FullpageSection>
-          </div>
-          <div id="ourService">
+          <Zoom>
+            <div id="home" style={{ padding: "0em" }}>
+              <FullpageSection
+                style={{
+                  height: "105vh",
+                }}
+              >
+                <Slideshow />
+              </FullpageSection>
+            </div>
+          </Zoom>
+          <Fade>
+            <div id="ourService">
+              <FullpageSection
+                style={{
+                  height: "100vh",
+                }}
+              >
+                <SoldComponent />
+              </FullpageSection>
+            </div>
+          </Fade>
+          <div id="auctions">
             <FullpageSection
               style={{
                 height: "100vh",
               }}
             >
-              <SoldComponent />
+              <AuctionComponent />
             </FullpageSection>
           </div>
-          <div id="auctions" >
-            <FullpageSection
-              style={{
-                height: "100vh",
-              }}
-            >
-              <AuctionComponent/>
-            </FullpageSection>
-          </div>
-          <div id="Our Team" >
+          <div id="Our Team">
             <FullpageSection
               style={{
                 height: "35vh",
               }}
             >
-              <TeamComponent/>
+              <TeamComponent />
             </FullpageSection>
           </div>
           <div id="contactUs" style={{ padding: "0em" }}>
             <FullpageSection>
-              <ContactComponent/>
+              <ContactComponent />
             </FullpageSection>
           </div>
         </FullPageSections>
