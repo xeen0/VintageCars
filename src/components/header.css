@@ -1,0 +1,21 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  #home {
+    /* padding-top: 56px; */
+    height: 110vh;
+    /* background-color: lightblue; */
+  }
+  
+  #soldcars {
+    padding-top: 56px;
+    height: 100vh;
+    /* background-color: blue; */
+  }
+  
+  #auctions {
+    padding-top: 56px;
+    height: 100vh;
+    /* background-color: red; */
+  }

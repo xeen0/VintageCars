@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width:100%;
+    padding: 0px;
+    height: 100; /* Should be removed. Only for demonstration */
+  }
+  .leftside,.rightside{
+    height: 100vh;
+    width: 100;
+  }
+ .rightside{
+   margin-top: 10rem;
+   margin-left: 10rem;
+   margin-right: 15rem;
+   z-index: 5;
+ }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
