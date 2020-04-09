@@ -19,7 +19,6 @@ export default function MainScreen() {
       <Fullpage>
         <FullpageNavigation />
         <FullPageSections>
-          <Zoom>
             <div id="home" style={{ padding: "0em" }}>
               <FullpageSection
                 style={{
@@ -29,7 +28,6 @@ export default function MainScreen() {
                 <Slideshow />
               </FullpageSection>
             </div>
-          </Zoom>
           <Fade>
             <div id="ourService">
               <FullpageSection
